@@ -2,10 +2,10 @@
 ```yml
 version: '3.7'
 services:
-  postgres:
-    image: postgres:latest
+  postgresql:
+    image: postgres:12-alpine
     ports:
-      - '3306:3306'
+      - '5432:5432'
     volumes:
       - ./data:/var/lib/postgres
     environment:
@@ -14,7 +14,7 @@ services:
       - POSTGRES_PASSWORD=9mRE
 ```
 ```Java
-spring.datasource.url=jdbc:postgres://localhost:3306/base
+spring.datasource.url=jdbc:postgresql://185.119.57.164:5432/base
 spring.datasource.username=adm
 spring.datasource.password=9mRE
 ```
